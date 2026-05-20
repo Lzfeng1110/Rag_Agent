@@ -65,7 +65,7 @@ def run_agent_with_tools(user_query):
         model="deepseek-chat",
         messages=messages,
         tools=tools,
-        temperature=1.2,  # 天气查询要精确，所以用 0 度
+        temperature=0.0,  # 天气查询要精确，所以用 0 度
         stream=False
     )
 
@@ -100,7 +100,7 @@ def run_agent_with_tools(user_query):
             second_response = client.chat.completions.create(
                 model="deepseek-chat",
                 messages=messages,
-                temperature=1.2,
+                temperature=0.5,
                 stream=True  # 第二次我们用流式，体验一下打字机效果
             )
 
@@ -127,7 +127,7 @@ def run_agent_with_tools(user_query):
 # ==========================================
 if __name__ == "__main__":
     print("===== 测试1：需要调用工具 =====")
-    run_agent_with_tools("北京今天天气怎么样？")
+    run_agent_with_tools("昆明今天天气怎么样？")
     print("\n")
     print("===== 测试2：不需要调用工具 =====")
     run_agent_with_tools("讲个笑话吧")

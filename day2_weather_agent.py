@@ -179,7 +179,7 @@ def run_agent_with_tools(user_query):
 #测试
 if __name__ == "__main__":
     print("===== 测试1：查天气（真实API） =====")
-    run_agent_with_tools("现在北京天气怎么样？")
+    run_agent_with_tools("现在昆明市五华区天气怎么样？")
     print("\n")
 
     print("===== 测试2：计算器 =====")
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     print("\n")
 
     print("===== 测试3：同时需要两个工具（LLM会选择） =====")
-    run_agent_with_tools("北京现在的温度是多少？然后帮我把这个温度乘以2是多少？")
+    run_agent_with_tools("昆明市五华区现在的温度是多少？然后帮我把这个温度换算成华氏度是多少？")
 
 
 
